@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #floating-panel {
+            position: absolute;
+            top: 10px;
+            right: 50px;
+            z-index: 5;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #999;
+            text-align: center;
+            font-family: 'Roboto', 'sans-serif';
+            line-height: 30px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta -->
+    <meta charset="utf-8" />
+    <meta content="initial-scale=1, width=device-width" name="viewport" />
+    <!-- http://getbootstrap.com/ -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- app's own CSS -->
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet" />
+    <!-- https://developers.google.com/maps/documentation/javascript/ -->
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ key | urlencode }}&v=3.exp"></script>
+    <!-- http://jquery.com/ -->
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- http://getbootstrap.com/ -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.min.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- https://github.com/corejavascript/typeahead.js/blob/master/doc/jquery_typeahead.md -->
+    <script src="https://cdn.rawgit.com/corejavascript/typeahead.js/master/dist/typeahead.jquery.js"></script>
+    <!-- http://handlebarsjs.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+    <!-- http://stewartjpark.com/Flask-JSGlue/ -->
+    {{ JSGlue.include() }}
+    <!-- app's own JavaScript -->
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <title>Bagpack</title>
+</head>
+
+<body>
+    <!-- fill viewport -->
+    <div class="container-fluid">
+        <div id="floating-panel" style="width:750px; allign:right;">
+            <nav class="btn-bar nav-light">
+                <input onclick="clearMarkers();" type=button value="Hide Route" class="btn btn-glass btn-primary">
+                <input onclick="showMarkers();" type=button value="Show Route" class="btn btn-glass btn-primary">
+                <input onclick="deleteMarkers();" type=button value="Clear route" class="btn btn-glass btn-danger">
+                <input onclick="completeRoute();" type=button value="Complete Route" class="btn btn-glass btn-success">
+            </nav>
+            <div id='error'></div>
+            <br>
+            <div id="collapse" class="collapse">
+                <div class="signupsubmit" id="warning"> Make sure you're prepared for the following weather conditions:</div>
+                <div id='temp' class="signupsubmit">
+                </div>
+                <nav class="btn-bar nav-light">
+                    <img src="static/camping.png" style="vertical-align: center; height:35px" onclick="selecthike();"><button onclick="selecthike();" class="btn btn-glass btn-success" style="height:50px">Camping trip </button>
+                    <img src="static/kayaking.png" style="vertical-align: center; height:35px" onclick="selectkayak();"><input onclick="selectkayak();" type="button" value="Kayaking" class="btn btn-glass btn-success">
+                    <img src="static/alpinism.png" style="vertical-align: center; height:35px" onclick="selectalpinism();"> <input onclick="selectalpinism();" type="button" value="Alpinism" class="btn btn-glass btn-success">
+                    <img src="static/biking.png" style="vertical-align: center; height:35px" onclick="selectbiking();"> <input onclick="selectbiking();" type="button" value="Biking" class="btn btn-glass btn-success">
+                </nav>
+            </div>
+            <div id="collapselist" class="collapse" collapse='hide' style="height: 0px">
+                <input id='itemspic' type="text" placeholder='link an URL for the photo of your equipment' style="width:500px;">
+                <input onclick="uploadpic();" type="button" value="Upload" class="btn btn-glass btn-success">
+                <div id='count'>
+                </div>
+
+                <table>
+                    <tr>
+                        <td class="lc">
+
+                            <img id="check" src="/static/check.png" style="display: none;">
+                            <input onclick="buy();" type="button" value="Buy" class="btn btn-glass btn-success" style='width:320px;'>
+                            <canvas id="pic"></canvas>
+
+                        </td>
+                        <td class="rc">
+                            <div class="scrollbar" id="list">
+                                <lable id='manual' class="signupsubmit">
+                                    Select the type of adventure, upload photo of your equipment and check it on the following list.</label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- https://developers.google.com/maps/documentation/javascript/tutorial -->
+        <div id="map-canvas"></div>
+        <!-- http://getbootstrap.com/css/#forms -->
+    </div>
+</body>
+
+</html>

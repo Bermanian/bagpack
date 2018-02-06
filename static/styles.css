@@ -1,0 +1,258 @@
+/* allow map to fill viewport */
+.btn-glass {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  padding: 1em 2em;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-weight: 300;
+  border: 1px dotted transparent;
+  letter-spacing: 0.98pt;
+  text-transform: uppercase;
+  -webkit-transition: background-position 2s cubic-bezier(0, 1, 0, 1), border-color 500ms, background-color 500ms;
+  transition: background-position 2s cubic-bezier(0, 1, 0, 1), border-color 500ms, background-color 500ms;
+  position: relative;
+  background-attachment: fixed, scroll;
+  background-size: 100vw 100vh, cover;
+  background-position: center center, 0 0;
+  background-image: -webkit-repeating-linear-gradient(135deg, rgba(255, 255, 255, 0) 8%, rgba(255, 255, 255, 0.075) 10%, rgba(255, 255, 255, 0.075) 14%, rgba(255, 255, 255, 0.15) 14%, rgba(255, 255, 255, 0.15) 15%, rgba(255, 255, 255, 0.075) 17%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 36%, rgba(255, 255, 255, 0.075) 40%, rgba(255, 255, 255, 0.15) 42%, rgba(255, 255, 255, 0) 43%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.075) 60%, rgba(255, 255, 255, 0.075) 66%, rgba(255, 255, 255, 0.15) 66%, rgba(255, 255, 255, 0.075) 70%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%), -webkit-radial-gradient(ellipse farthest-corner, transparent, rgba(0, 0, 0, 0.2) 110%);
+  background-image: repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0) 8%, rgba(255, 255, 255, 0.075) 10%, rgba(255, 255, 255, 0.075) 14%, rgba(255, 255, 255, 0.15) 14%, rgba(255, 255, 255, 0.15) 15%, rgba(255, 255, 255, 0.075) 17%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 36%, rgba(255, 255, 255, 0.075) 40%, rgba(255, 255, 255, 0.15) 42%, rgba(255, 255, 255, 0) 43%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.075) 60%, rgba(255, 255, 255, 0.075) 66%, rgba(255, 255, 255, 0.15) 66%, rgba(255, 255, 255, 0.075) 70%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%), radial-gradient(ellipse farthest-corner, transparent, rgba(0, 0, 0, 0.2) 110%);
+}
+.btn-glass:hover {
+  background-position: -100vw 0, 0 0;
+}
+.btn-glass:active {
+  background-position: -75vw 0, 0 0;
+  border-style: solid;
+}
+.nav-light {
+  background-color: white;
+  background: rgba(0, 0, 0, 0.5);
+}
+.nav-light .btn-glass {
+  color: #585858;
+  background-color: rgba(17, 17, 17, 0);
+}
+.nav-light .btn-glass:hover {
+  color: rgba(255, 255, 255, 0.7);
+  border-color: #000000;
+  background-color: #111111;
+}
+.nav-light .btn-glass:active {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 1em 0.5ex rgba(17, 17, 17, 0.5);
+}
+.nav-light .btn-glass.btn-primary {
+  color: #6ab1d1;
+  background-color: rgba(42, 143, 189, 0);
+}
+.nav-light .btn-glass.btn-primary:hover {
+  color: rgba(255, 255, 255, 0.7);
+  border-color: #1c607e;
+  background-color: #2A8FBD;
+}
+.nav-light .btn-glass.btn-primary:active {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 1em 0.5ex rgba(42, 143, 189, 0.5);
+}
+.nav-light .btn-glass.btn-success {
+  color: #a5c75f;
+  background-color: rgba(127, 175, 27, 0);
+  white-space: pre-line;
+}
+.nav-light .btn-glass.btn-success:hover {
+  color: rgba(255, 255, 255, 0.7);
+  border-color: #4f6d11;
+  background-color: #7FAF1B;
+  white-space: pre-line;
+}
+.nav-light .btn-glass.btn-success:active {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 1em 0.5ex rgba(127, 175, 27, 0.5);
+  white-space: pre-line;
+}
+.nav-light .btn-glass.btn-warning {
+  color: #fccd69;
+  background-color: rgba(251, 184, 41, 0);
+}
+.nav-light .btn-glass.btn-warning:hover {
+  color: rgba(255, 255, 255, 0.7);
+  border-color: #d49104;
+  background-color: #FBB829;
+}
+.nav-light .btn-glass.btn-warning:active {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 1em 0.5ex rgba(251, 184, 41, 0.5);
+}
+.nav-light .btn-glass.btn-danger {
+  color: #f56558;
+  background-color: rgba(240, 35, 17, 0);
+}
+.nav-light .btn-glass.btn-danger:hover {
+  color: rgba(255, 255, 255, 0.7);
+  border-color: #aa180b;
+  background-color: #F02311;
+}
+.nav-light .btn-glass.btn-danger:active {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 1em 0.5ex rgba(240, 35, 17, 0.5);
+}
+html, body, #map-canvas, .container-fluid
+{
+    /* height of these elements */
+    height: 100%;
+    width: 100%;
+
+    /* no margin around these elements */
+    margin: 0;
+
+    /* disable scrollbars */
+    overflow: disabled;
+
+    /* no padding within these elements */
+    padding: 0;
+    clear: both;
+}
+
+/* center form */
+#form
+{
+    /* position form "absolutely" where we want it */
+    position: relative;
+
+    /* distance from top edge of viewport */
+    top: 28px;
+    left:800px;
+
+    /* form's width */
+    width: 100%;
+}
+#form .form-group
+{
+    /* block-level flex container */
+    display: flex;
+
+    /* center container's content */
+    justify-content: center;
+}
+
+/* stylize text box */
+#q
+{
+    /* override typeahead.js's transparent background */
+    background-color: #ffffff !important;
+
+    /* text box's width */
+    width: 300px;
+
+}
+
+/* stylize info window */
+#info
+{
+    /* no margin around this element */
+    margin: 0;
+
+    /* allow scrollbars as needed */
+    overflow: auto;
+}
+#info ul
+{
+    margin-bottom: 0;
+}
+
+/* stylize typeahead.js a la http://twitter.github.io/typeahead.js/css/examples.css */
+.tt-menu
+{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 1px;
+    max-height: 150px;
+    overflow-y: auto;
+    width: 300px;
+}
+.tt-suggestion.tt-cursor {
+    background-color: #0097cf;
+    color: #fff;
+    cursor: pointer;
+}
+.tt-suggestion {
+    margin: 0;
+    padding: 6px 12px;
+}
+#img { display: none; }
+
+.dropzone {
+  width: 300px;
+  height: 320px;
+  border: 2px dashed #aaa;
+  color: #5aa;
+  line-height: 100px;
+  text-align: center;
+  visibility: visible;
+}
+
+.dropzone.dragover {
+  color: green;
+  border: 2px dashed #000;
+}
+
+.lc {
+    text-align: left;
+ height: auto;
+ width:auto;
+   }
+.rc{
+    width:500px;
+}
+.list {
+    clear: both;
+}
+
+.signupsubmit {
+
+    font-weight: 600;
+    text-indent: 30px;
+    color: white
+}
+
+.scrollbar
+{
+
+	float: left;
+	height: 5;
+
+
+	overflow-y: scroll;
+
+}
+#list::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: rgba(0,0,0,0.3);
+	height:500px;
+}
+
+#list::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: rgba(0,0,0,0.3);
+}
+
+#list::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+	background-color: #555;
+}
