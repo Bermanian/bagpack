@@ -97,7 +97,7 @@ function placeMarkerAndPanTo(latLng, map) {
     //get forecast from http://www.myweather2.com/ and link to https://www.wunderground.com  and add it to content
     $.getJSON(Flask.url_for("weather"), myLatLng)
         .done(function(data, textStatus, jqXHR) {
-            if (!(data['wtype1'])) {
+            if (!(data)) {
                 data['wtype'] = 'clear';
                 data['temp'] = '10';
                 data['mintemp'] = '10';
@@ -105,7 +105,7 @@ function placeMarkerAndPanTo(latLng, map) {
                 data['wtype1'] = 'clear';
             }
 
-            content = content + "<a href=\"" + data['wurl'] + "\" target=\"_blank\">";
+            content = content + "<a href=\"" + data['wurl1'] + "\" target=\"_blank\">";
             content = content + "   Weather: <b>" + data['wtype'] + "</b>;  Temp: <b>" + data['temp'] + "°C</b>; Night Min temp: <b>" + data['mintemp'] + "°C</b>; Day Max temp: <b>" + data['maxtemp'] + "°C</b>" + "</a>";
             weather.push(data);
         });
