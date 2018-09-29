@@ -1,4 +1,4 @@
-# SkliarovAnton
+# Skliarov Anton
 This is my CS50 Final Project.
 Youtube video is here https://www.youtube.com/watch?v=5_HvPkMt4Ck
 Subtitles and description are available in English, Russian and Ukrainian.
