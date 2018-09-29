@@ -35,7 +35,7 @@ This is my first own project, so it has a lot of dirrections for improoving:
     - much more =)
 
 
-My python\js\html\css web based app for hikers and travelers.
+My python\js\html\css + a bit SQL web based app for hikers and travelers.
 Based on pset8 and some backpack packing experience =)
 
 The user builds the route of his\her planned adventure, checks the weather forecast for each point of the route and total weather
